@@ -1,0 +1,36 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="backText">返回</view>
+  <view slot="content">电影推推</view>
+</cu-custom>
+
+<view wx:if="{{state==0}}" class="flex bg-grey align" style="height: 250rpx;">
+  <image wx:if="{{!userInfo}}" src="/images/pic.png" class="round pic"></image>
+  <image wx:else src="{{userInfo.avatarUrl}}" class="round pic"></image>
+  <view wx:if="{{openId==''}}" class="button" bindtap="getOpenId">微信登陆</view>
+</view>
+
+<view wx:if="{{state==1}}" class="flex bg-grey align" style="height: 250rpx;">
+  <image src="/images/pic.png" style="position:relative;left: 100rpx;" class="round pic"></image>
+  <button class="button-login" style="width: 300rpx;position:relative;left: 50rpx;font-size: small;" bindtap="getUserProfile">获取头像信息</button>
+</view>
+
+<view wx:if="{{state==2}}" class="flex bg-grey alignshow" style="height: 250rpx;">
+  <image wx:if="{{!userInfo}}" src="/images/pic.png" class="round pic"></image>
+  <image wx:else src="{{userInfo.avatarUrl}}" class="round pic"></image>
+  <view class="text-xxl padding text-white text-bold">{{userInfo.nickName}}</view>
+</view>
+
+<view class="flex two" >
+  <view class="align2 padding" bindtap="gohelp">
+    <image src="/images/question.png" class="logo"></image>
+    <view class="text-xl text-bold padding">帮助</view>
+  </view>
+  <view class="align2 padding" bindtap="gosetting">
+    <image src="/images/setting.png" class="logo"></image>
+    <view class="text-xl text-bold padding">设置</view>
+  </view>
+  <view class="align2 padding" bindtap="goabout">
+    <image src="/images/about.png" class="logo"></image>
+    <view  class="text-xl text-bold padding">关于</view>
+  </view>
+</view>

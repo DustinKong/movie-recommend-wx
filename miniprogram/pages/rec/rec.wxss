@@ -1,0 +1,8 @@
+/* pages/rec/rec.wxss */
+.content{
+  font-size: 18rpx;
+}
+.ali{
+  justify-content: space-between;
+  align-items: center;
+}

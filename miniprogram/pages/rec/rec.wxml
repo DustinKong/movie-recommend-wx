@@ -1,0 +1,23 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">电影列表</view>
+</cu-custom>
+
+<view class="page-body">
+  <view class="list">
+    <block wx:for="{{showList}}" wx:key>
+      <!-- <scroll-view  scroll-y="true" style="height: 100rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
+      <view class="flex margin bg-white radius ali">
+        <view class="text-center padding text-bold text-xl" bindtap="getid" data-movie_id="{{item.movie_id}}">
+        {{index+1}}、{{item.movie_name}}
+        </view>
+
+        <view class="text-xl padding text-red text-bold">
+          评分：{{item.movie_rating}}
+        </view>
+        
+      </view>
+      <!-- </scroll-view> -->
+    </block>
+  </view>
+</view>

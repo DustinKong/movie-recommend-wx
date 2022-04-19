@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{false}}">
+  <view slot="backText">返回</view>
+  <view slot="content">电影推推</view>
+</cu-custom>
+<swiper class="screen-swiper  square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{showList}}" wx:key>
+    <view class="text-center padding-sm text-bold text-xl" >{{item.movie_name}}</view>
+    <image src="{{item.image_link[0]}}" mode="aspectFit"></image>
+  </swiper-item>
+</swiper>
+
+<view class="padding flex flex-direction justify-between ">
+  <button class="cu-btn bg-red margin-tb-sm lg" bindtap="golist">测试喜好</button>
+  <button class="cu-btn bg-blue lg" bindtap="gorec">推荐</button>
+</view>

@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">电影列表</view>
+</cu-custom>
+<!-- <swiper class="screen-swiper  square-dot" indicator-dots="true">
+  <swiper-item wx:for="{{showList}}" wx:key>
+    <view class="text-center padding-sm text-bold text-xl" >{{item.movie_name}}</view>
+    <view class="text-center padding-sm text-bold text-xl" >{{item.movie_name}}</view>
+    <image src="{{item.image_link[0]}}" mode="aspectFit"></image>
+    
+  </swiper-item>
+</swiper> -->
+
+<view class="page-body">
+  <swiper indicator-dots="true" vertical="true" current="{{current}}">
+    <block>
+      <swiper-item wx:for="{{showList}}" wx:key catchtouchmove="false">
+        <view class="text-center padding-sm text-bold text-xl">电影名:{{item.movie_name}}
+          <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          类型:{{item.movie_type[0]}}
+        </view>
+        <image class="swiper-item" src="{{item.image_link[0]}}" mode="aspectFit"></image>
+        
+        <!-- <view class="text">评分：{{item.movie_rating}}</view> -->
+        <view class="text-center text-bold padding text-xl">
+          上映日期：{{item.movie_releaseDate}}
+          <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+          评分：{{item.movie_rating}}
+        </view>
+        <!-- <view class="text"></view> -->
+        <view class="text-center text-bold padding">
+          用户评论top3：{{item.top3[0]}}/{{item.top3[1]}}/{{item.top3[2]}}
+          <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          制片国家：{{item.movie_productionCountry[0]}} 
+        </view>
+        <view class="flex ali">
+          <button class="mini-btn"  size="mini" bindtap="nextImg" data-num="-1" data-id="{{item.movie_id}}">不喜欢</button>
+          <button class="mini-btn" type="default" size="mini" bindtap="nextImg" data-num="0" data-id="{{item.movie_id}}">跳过</button>
+          <button class="mini-btn" type="warn" size="mini" bindtap="nextImg"  data-num="1" data-id="{{item.movie_id}}">喜欢</button>
+        </view>
+
+      </swiper-item>
+      
+    </block>
+    
+  </swiper>
+</view>
+
+<!-- <view class="button-sp-area">
+  <button class="mini-btn" type="warn" plain="true" size="mini">不喜欢</button>
+  <button class="mini-btn" type="default" plain="true" size="mini">跳过</button>
+  <button class="mini-btn" type="primary" plain="true" size="mini">喜欢</button>
+</view> -->

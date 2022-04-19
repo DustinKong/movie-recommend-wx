@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">电影推推</view>
+</cu-custom>
+
+<view class="page-body">
+  <block>
+    <view class="text-center padding-sm text-bold text-xl">电影名:{{movie.movie_name}}
+      <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      类型:{{movie.movie_type[0]}}
+    </view>
+    <image class="swiper-item" src="{{movie.image_link[0]}}" mode="aspectFit"></image>
+
+    <!-- <view class="text">评分：{{item.movie_rating}}</view> -->
+    <view class="text-center text-bold text-xl">
+      上映日期：{{movie.movie_releaseDate}}
+      <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      评分：{{movie.movie_rating}}
+    </view>
+    <!-- <view class="text"></view> -->
+    <view class="text-center text-bold text-xl">
+      用户评论top3：{{movie.top3[0]}}/{{movie.top3[1]}}/{{movie.top3[2]}}
+      <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      制片国家：{{movie.movie_productionCountry[0]}}
+    </view>
+    <view class="intro padding content">
+      简介：
+      <text>\n</text>
+      {{movie.movie_intro}}
+    </view>
+    <!-- <view class="text"></view> -->
+
+  </block>
+
+</view>

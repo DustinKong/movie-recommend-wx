@@ -1,0 +1,1 @@
+"D:\wechat_develop\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-7ga475il8f3b6a3c --n quickstartFunctions --r --project "D:\wechat_develop\电影推推" --report_first --report
